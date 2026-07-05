@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Tags: Isse aapki site Google search me aane lagegi -->
+    <title>Professional Bio-Data Maker | Online Marriage Bio-Data Generator</title>
+    <meta name="description" content="Create premium marriage and job bio-data online for free. Download high-quality PDF with royal frames instantly.">
+    <meta name="keywords" content="bio-data maker, marriage biodata, free resume builder, online biodata generator, shaadi ke liye biodata">
+    
+    <!-- Premium Fonts & Icons -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <script src="https://tailwindcss.com"></script>
+    <script src="https://cloudflare.com"></script>
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .royal-font { font-family: 'Cinzel', serif; }
+        .royal-border { border: 6px double #b19453; padding: 25px; position: relative; background: #fffdf9; }
+        .royal-border::before { content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px; border: 1px solid #b19453; pointer-events: none; }
+        /* Lock effect for premium features */
+        .premium-locked { position: relative; filter: blur(0.5px); opacity: 0.7; pointer-events: none; }
+        .lock-badge { position: absolute; top: 10px; right: 10px; background: #b19453; color: white; padding: 2px 8px; font-size: 10px; font-weight: bold; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Top Navigation Bar -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 px-6 py-3 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-2">
+            <div class="bg-amber-600 text-white p-2 rounded-lg"><i class="fa-solid fa-file-invoice-with-usd text-lg"></i></div>
+            <span class="text-xl font-bold tracking-tight text-slate-900">BioData<span class="text-amber-600">Pro</span></span>
+        </div>
+        <div class="flex items-center gap-4 text-sm font-semibold">
+            <a href="#" class="text-slate-600 hover:text-amber-600 hidden md:block">Templates</a>
+            <a href="#" class="text-slate-600 hover:text-amber-600 hidden md:block">Pricing</a>
+            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs font-bold"><i class="fa-solid fa-crown mr-1"></i> Premium Live</span>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Side: Pricing & Form Inputs (7 Columns) -->
+        <div class="lg:col-span-7 space-y-6">
+            
+            <!-- Pricing Plans Info (Free vs Premium Banner) -->
+            <div class="grid grid-cols-2 gap-4 bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                <div class="p-3 bg-slate-50 rounded-lg border-2 border-slate-200 relative">
+                    <span class="absolute top-2 right-2 text-xs font-bold text-emerald-600">Active</span>
+                    <h4 class="font-bold text-sm text-slate-700">🟢 Basic Plan</h4>
+                    <p class="text-xs text-slate-500 mt-1">Normal Text, Standard Details</p>
+                    <p class="text-sm font-black text-slate-800 mt-2">₹0 <span class="text-xs font-normal text-slate-400">/ Free</span></p>
+                </div>
+                <div class="p-3 bg-amber-50/50 rounded-lg border-2 border-amber-400 relative">
+                    <span class="absolute top-2 right-2 text-[10px] font-bold bg-amber-600 text-white px-1.5 py-0.5 rounded"><i class="fa-solid fa-star"></i> Upgrade</span>
+                    <h4 class="font-bold text-sm text-amber-900">👑 Royal Premium</h4>
+                    <p class="text-xs text-slate-500 mt-1">Golden Frame, Horoscope, Photo Upload</p>
+                    <p class="text-sm font-black text-amber-700 mt-2">₹99 <span class="text-xs font-normal text-slate-400">/ One-time</span></p>
+                </div>
+            </div>
+
+            <!-- Interactive Form -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-5">
+                <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2"><i class="fa-solid fa-pen-to-square text-amber-600"></i> Fill Information</h2>
+                
+                <!-- Free Fields Group -->
+                <div class="space-y-3">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Standard Fields (Free)</div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">Full Name</label>
+                        <input type="text" id="inName" oninput="updatePreview()" placeholder="Rajesh Kumar" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Date of Birth</label>
+                            <input type="date" id="inDob" oninput="updatePreview()" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Education</label>
+                            <input type="text" id="inEdu" oninput="updatePreview()" placeholder="B.Sc / MCA" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Fields Group -->
+                <div class="space-y-3 pt-2 border-t border-slate-100">
+                    <div class="text-xs font-bold uppercase tracking-wider text-amber-600 flex items-center gap-1">
+                        <i class="fa-solid fa-crown text-[10px]"></i> Premium Fields (Paid Feature)
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Gotra / Caste</label>
+                            <input type="text" id="inCaste" oninput="updatePreview()" placeholder="Bhardwaj (Premium Only)" class="w-full px-3 py-2 border border-amber-200 bg-amber-50/20 rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Rashi / Horoscope</label>
+                            <input type="text" id="inRashi" oninput="updatePreview()" placeholder="Singh / Leo (Premium Only)" class="w-full px-3 py-2 border border-amber-200 bg-amber-50/20 rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1">Premium Photo Upload</label>
+                        <input type="file" id="inPhoto" accept="image/*" onchange="previewImage(event)" class="w-full text-xs text-slate-500 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border file:border-amber-300 file:text-xs file:font-bold file:bg-amber-50 file:text-amber-800 hover:file:bg-amber-100 cursor-pointer">
+                    </div>
+                </div>
+
+                <!-- Standard Contacts (Free) -->
+                <div class="space-y-3 pt-2 border-t border-slate-100">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Contact Details (Free)</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Phone Number</label>
+                            <input type="tel" id="inPhone" oninput="updatePreview()" placeholder="9876543210" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Address</label>
+                            <input type="text" id="inAddress" oninput="updatePreview()" placeholder="Mumbai, India" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 text-sm focus:outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button Matrix -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                    <button onclick="downloadPDF(false)" class="bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 px-4 rounded-xl shadow-sm text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-arrow-down"></i> Download Free Version
+                    </button>
+                    <button onclick="alert('Payment Gateway Demo: In real website, user pays ₹99 here to unlock full feature.')" class="bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white font-bold py-3 px-4 rounded-xl shadow-md text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-crown"></i> Unlock Royal Premium (₹99)
+                    </button>
+                </div>
+            </div>
