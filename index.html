@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Bio-Data Maker</title>
+    <!-- CSS library for premium design -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- PDF engine -->
+    <script src="https://cloudflare.com"></script>
+    <style>
+        body { background: #f0f2f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        .main-card { border-radius: 16px; border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+        .preview-pane { background: #fff; border: 4px double #8a6d3b; padding: 30px; position: relative; min-height: 600px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .preview-pane::before { content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border: 1px solid #8a6d3b; pointer-events: none; }
+        .royal-title { color: #5c4033; font-weight: 900; letter-spacing: 4px; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); }
+        .section-heading { background: #fcf8e3; color: #8a6d3b; padding: 4px 10px; font-weight: bold; border-left: 4px solid #8a6d3b; margin-top: 20px; font-size: 14px; text-transform: uppercase; }
+        .data-row { display: flex; margin-bottom: 8px; font-size: 14px; border-bottom: 1px dashed #eee; padding-bottom: 4px; }
+        .data-label { width: 35%; font-weight: 600; color: #666; }
+        .data-val { width: 65%; color: #222; font-weight: 500; }
+        .btn-premium { background: linear-gradient(135deg, #8a6d3b, #5c4033); color: white; border: none; font-weight: bold; padding: 12px; border-radius: 8px; }
+        .btn-premium:hover { background: linear-gradient(135deg, #5c4033, #3d2b22); color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold text-dark">Premium Bio-Data Generator</h1>
+        <p class="text-muted">Apni details bhariye, live preview dekhiye aur professional format me download kijiye.</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Input Form -->
+        <div class="col-lg-5">
+            <div class="card main-card p-4 bg-white">
+                <h4 class="mb-3 text-dark fw-bold border-bottom pb-2">✍️ Enter Details</h4>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Full Name</label>
+                    <input type="text" id="inName" oninput="update()" placeholder="Rahul Sharma" class="form-control">
+                </div>
+                <div class="row g-2 mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold text-secondary">Date of Birth</label>
+                        <input type="date" id="inDob" oninput="update()" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold text-secondary">Height</label>
+                        <input type="text" id="inHeight" oninput="update()" placeholder="5 ft 6 in" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Education / Degree</label>
+                    <input type="text" id="inEdu" oninput="update()" placeholder="B.Tech / MBA" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Occupation / Job</label>
+                    <input type="text" id="inJob" oninput="update()" placeholder="Software Engineer" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Father's Name</label>
+                    <input type="text" id="inFather" oninput="update()" placeholder="Shri Alok Sharma" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Contact Number</label>
+                    <input type="tel" id="inPhone" oninput="update()" placeholder="9876543210" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Address</label>
+                    <textarea id="inAddress" oninput="update()" rows="2" placeholder="New Delhi, India" class="form-control"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-secondary">Profile Image</label>
+                    <input type="file" accept="image/*" onchange="loadImg(event)" class="form-control">
+                </div>
+                <button onclick="download()" class="btn btn-premium w-full mt-2">📥 Download Premium PDF</button>
+            </div>
+        </div>
+
+        <!-- Live Golden Preview -->
+        <div class="col-lg-7 d-flex justify-content-center">
+            <div id="print-area" class="preview-pane w-100" style="max-width: 500px;">
+                <div class="text-center mb-4">
+                    <h2 class="royal-title m-0 font-serif">BIO-DATA</h2>
+                    <div style="width: 60px; hhtml2pdfeight: 2px; background: #8a6d3b; margin: 6px auto;"></div>
+                </div>
+
+                <div class="d-flex align-items-start gap-3 mb-4">
+                    <div style="width: 105px; height: 125px; border: 2px solid #8a6d3b; background: #fafafa; overflow:hidden;" class="flex-shrink-0">
+                        <img id="vPhoto" src="https://placeholder.com" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div>
+                        <h4 id="vName" class="fw-bold text-dark m-0" style="font-family: serif;">Rahul Sharma</h4>
+                        <p id="vJob" class="text-muted small m-0">Software Engineer</p>
+                    </div>
+                </div>
+
+                <div class="section-heading">✨ Personal Details</div>
+                <div class="mt-2">
+                    <div class="data-row"><span class="data-label">Date of Birth</span><span id="vDob" class="data-val">-</span></div>
+                    <div class="data-row"><span class="data-label">Height</span><span id="vHeight" class="data-val">-</span></div>
+                    <div class="data-row"><span class="data-label">Education</span><span id="vEdu" class="data-val">-</span></div>
+                </div>
+
+                <div class="section-heading">👨‍👩‍👦 Family Details</div>
+                <div class="mt-2">
+                    <div class="data-row"><span class="data-label">Father's Name</span><span id="vFather" class="data-val">-</span></div>
+                </div>
+
+                <div class="section-heading">📞 Contact Details</div>
+                <div class="mt-2">
+                    <div class="data-row"><span class="data-label">Mobile No</span><span id="vPhone" class="data-val">-</span></div>
+                    <div class="data-row"><span class="data-label">Address</span><span id="vAddress" class="data-val">-</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function update() {
+        document.getElementById('vName').innerText = document.getElementById('inName').value || 'Rahul Sharma';
+        document.getElementById('vJob').innerText = document.getElementById('inJob').value || 'Software Engineer';
+        document.getElementById('vHeight').innerText = document.getElementById('inHeight').value || '-';
+        document.getElementById('vDob').innerText = document.getElementById('inDob').value || '-';
+        document.getElementById('vEdu').innerText = document.getElementById('inEdu').value || '-';
+        document.getElementById('vFather').innerText = document.getElementById('inFather').value || '-';
+        document.getElementById('vPhone').innerText = document.getElementById('inPhone').value || '-';
+        document.getElementById('vAddress').innerText = document.getElementById('inAddress').value || '-';
+    }
+    function loadImg(e) {
+        const r = new FileReader();
+        r.onload = function() { document.getElementById('vPhoto').src = r.result; };
+        if(e.target.files[0]) r.readAsDataURL(e.target.files[0]);
+    }
+    function download() {
+        const el = document.getElementById('print-area');
+        const name = document.getElementById('inName').value || 'BioData';
+        html2pdf().set({
+            margin: 0.2,
+            filename: name + '_Biodata.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 3 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        }).from(el).save();
+    }
+</script>
+</body>
+</html>
