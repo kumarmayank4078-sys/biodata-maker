@@ -64,4 +64,167 @@
 
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-5">
                 <h2 class="text-lg font-bold text-slate-900 flex items-center gap-2">
-                    <i class="fa-solid fa-pen-to-square text-amber
+                    <i class="fa-solid fa-pen-to-square text-amber-600"></i> Enter Details
+                </h2>
+
+                <div class="space-y-3">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Standard Fields</div>
+                    
+                    <label class="block text-xs font-bold text-slate-600 mb-1">Full Name</label>
+                    <input type="text" id="inName" oninput="updatePreview()" placeholder="Rajesh Kumar" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none mb-3">
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Date of Birth</label>
+                            <input type="date" id="inDob" oninput="updatePreview()" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Education</label>
+                            <input type="text" id="inEdu" oninput="updatePreview()" placeholder="B.Sc / MCA" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 pt-2 border-t border-slate-100">
+                    <div class="text-xs font-bold uppercase tracking-wider text-amber-600 flex items-center gap-1">
+                        <i class="fa-solid fa-crown text-[10px]"></i> Premium Fields
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Gotra / Caste</label>
+                            <input type="text" id="inCaste" oninput="updatePreview()" placeholder="Bhardwaj" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Rashi / Horoscope</label>
+                            <input type="text" id="inRashi" oninput="updatePreview()" placeholder="Leo" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-600 mb-1 mt-2">Upload Photo</label>
+                        <input type="file" id="inPhoto" accept="image/*" onchange="previewImage(event)" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100">
+                    </div>
+                </div>
+
+                <div class="space-y-3 pt-2 border-t border-slate-100">
+                    <div class="text-xs font-bold uppercase tracking-wider text-slate-400">Contact Details</div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Phone Number</label>
+                            <input type="tel" id="inPhone" oninput="updatePreview()" placeholder="+91 9876543210" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-600 mb-1">Address</label>
+                            <input type="text" id="inAddress" oninput="updatePreview()" placeholder="Mumbai, India" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 gap-3 pt-4">
+                    <button onclick="window.print()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-xl shadow-md transition-all">
+                        <i class="fa-solid fa-download mr-2"></i> Download Bio-Data (PDF)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:col-span-7">
+            <div class="sticky top-24">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-slate-700"><i class="fa-regular fa-eye"></i> Live Preview</h3>
+                    <span class="text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full animate-pulse">Auto-updating</span>
+                </div>
+                
+                <div id="print-area" class="w-full flex justify-center">
+                    <div class="royal-border w-full max-w-lg mx-auto">
+                        
+                        <div class="text-center mb-6">
+                            <h1 class="royal-font text-amber-600 text-2xl font-bold mb-1">|| Shree Ganeshay Namah ||</h1>
+                            <h2 class="royal-font text-3xl font-bold text-slate-800 tracking-widest border-b-2 border-amber-600 inline-block pb-1">BIO-DATA</h2>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="w-full md:w-1/3 flex flex-col items-center border-b md:border-b-0 md:border-r border-slate-200 pb-4 md:pb-0 md:pr-4">
+                                <div class="w-32 h-40 border-4 border-amber-500 p-1 bg-white shadow-sm">
+                                    <img id="outPhoto" src="https://via.placeholder.com/150x200?text=Your+Photo" alt="Profile" class="w-full h-full object-cover">
+                                </div>
+                                <h3 id="outName" class="royal-font font-bold text-lg mt-3 text-center text-amber-900 break-words w-full">Rajesh Kumar</h3>
+                            </div>
+
+                            <div class="w-full md:w-2/3 space-y-4">
+                                
+                                <div>
+                                    <h4 class="text-xs font-bold text-amber-700 uppercase tracking-widest border-b border-amber-200 pb-1 mb-2">Personal Details</h4>
+                                    <table class="w-full text-sm">
+                                        <tr><td class="font-semibold text-slate-600 py-1 w-2/5">Date of Birth:</td><td class="text-slate-800" id="outDob">DD/MM/YYYY</td></tr>
+                                        <tr><td class="font-semibold text-slate-600 py-1">Education:</td><td class="text-slate-800" id="outEdu">-</td></tr>
+                                        <tr><td class="font-semibold text-slate-600 py-1">Gotra/Caste:</td><td class="text-slate-800" id="outCaste">-</td></tr>
+                                        <tr><td class="font-semibold text-slate-600 py-1">Rashi:</td><td class="text-slate-800" id="outRashi">-</td></tr>
+                                    </table>
+                                </div>
+
+                                <div>
+                                    <h4 class="text-xs font-bold text-amber-700 uppercase tracking-widest border-b border-amber-200 pb-1 mb-2">Contact Details</h4>
+                                    <table class="w-full text-sm">
+                                        <tr><td class="font-semibold text-slate-600 py-1 w-2/5">Phone:</td><td class="text-slate-800" id="outPhone">-</td></tr>
+                                        <tr><td class="font-semibold text-slate-600 py-1 align-top">Address:</td><td class="text-slate-800" id="outAddress">-</td></tr>
+                                    </table>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 text-center text-amber-600">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        
+                    </div>
+                </div>
+                </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Real-time text update function
+        function updatePreview() {
+            const fields = ['Name', 'Dob', 'Edu', 'Caste', 'Rashi', 'Phone', 'Address'];
+            
+            fields.forEach(field => {
+                const inputVal = document.getElementById(`in${field}`).value;
+                const outputEl = document.getElementById(`out${field}`);
+                
+                if (inputVal.trim() !== '') {
+                    // For DOB, you might want to format it, but keeping it direct for now
+                    outputEl.innerText = inputVal;
+                } else {
+                    // Set default placeholders if empty
+                    const defaults = {
+                        'Name': 'Rajesh Kumar',
+                        'Dob': 'DD/MM/YYYY',
+                        'Edu': '-',
+                        'Caste': '-',
+                        'Rashi': '-',
+                        'Phone': '-',
+                        'Address': '-'
+                    };
+                    outputEl.innerText = defaults[field];
+                }
+            });
+        }
+
+        // Image upload preview function
+        function previewImage(event) {
+            const outputPhoto = document.getElementById('outPhoto');
+            if (event.target.files && event.target.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    outputPhoto.src = e.target.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        }
+    </script>
+</body>
+</html>
